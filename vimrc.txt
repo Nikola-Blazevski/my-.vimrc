@@ -187,7 +187,7 @@ else
   " IndentLine
   let g:indentLine_enabled = 1
   let g:indentLine_concealcursor = ''
-  let g:indentLine_char = '┆'
+  let g:indentLine_char = 'â”†'
   let g:indentLine_faster = 1
 
   
@@ -508,4 +508,4 @@ if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
 
-
+:hi Normal ctermfg=White ctermbg=Black
