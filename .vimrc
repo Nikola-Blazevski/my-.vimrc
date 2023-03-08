@@ -1,4 +1,5 @@
 map <F7> :w <bar> :! pdflatex %<CR><CR>
+map <F5> :w <bar> :!biber %:r<CR><CR>
 map <F6> :! zathura $(echo % \| sed 's/tex$/pdf/') & disown<CR><CR>
 autocmd vimEnter *.cpp map <F8> :w <CR> :!clear ; g++ --std=c++17 %; if [ -f a.out ]; then time ./a.out; rm a.out; fi <CR>
 
@@ -51,6 +52,7 @@ call plug#begin(expand('~/.vim/plugged'))
 "" Plug install packages
 "*****************************************************************************
 Plug 'scrooloose/nerdtree'
+Plug 'w0rp/ale'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
@@ -129,6 +131,8 @@ Plug 'xolox/vim-lua-inspect'
 "" Perl Bundle
 Plug 'vim-perl/vim-perl'
 Plug 'c9s/perlomni.vim'
+
+
 
 
 " php
@@ -676,8 +680,6 @@ augroup vimrc-python
 augroup END
 
 " jedi-vim
-let g:jedi#popup_on_dot = 0
-let g:jedi#goto_assignments_command = "<leader>g"
 let g:jedi#goto_definitions_command = "<leader>d"
 let g:jedi#documentation_command = "K"
 let g:jedi#usages_command = "<leader>n"
